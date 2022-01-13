@@ -380,6 +380,10 @@ open class TableViewHeaderFooterView: UITableViewHeaderFooterView {
 
         self.style = style
 
+        // fix for voice over reading out "heading" for an accessoryButton when a TableViewHeaderFooterView
+        // starts offscreen, or is scrolled offscreen then back onscreen
+        accessoryButton?.accessibilityTraits = [.button]
+
         setNeedsLayout()
     }
 
